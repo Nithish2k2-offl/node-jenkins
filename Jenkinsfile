@@ -18,7 +18,7 @@ pipeline {
                     } else {
                         bat 'if not exist server.js exit 1'
                         bat 'if not exist public\\index.html exit 1'
-                        bat 'echo " inside unix "'
+                        bat 'echo " inside windows "'
                     }
                 }
             }
