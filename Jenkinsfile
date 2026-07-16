@@ -13,10 +13,12 @@ pipeline {
                 echo 'Checking if files exist inside the Jenkins workspace...'
                 script {
                     if (isUnix()) {
-                        sh 'test -f server.js && test -f index.html'
+                        sh 'test -f server.js && test -f public/index.html'
+                        sh 'echo " inside unix "'
                     } else {
                         bat 'if not exist server.js exit 1'
                         bat 'if not exist public\\index.html exit 1'
+                        bat 'echo " inside unix "'
                     }
                 }
             }
