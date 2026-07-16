@@ -16,7 +16,7 @@ pipeline {
                         sh 'test -f server.js && test -f index.html'
                     } else {
                         bat 'if not exist server.js exit 1'
-                        bat 'if not exist index.html exit 1'
+                        bat 'if not exist public\\index.html exit 1'
                     }
                 }
             }
