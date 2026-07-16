@@ -27,7 +27,7 @@ pipeline {
             steps {
                 echo 'Archiving code files into a deployable bundle...'
                 // This native Jenkins step safely records your specified application files
-                archiveArtifacts artifacts: 'index.html,server.js', fingerprint: true
+                archiveArtifacts artifacts: 'public\\index.html,server.js', fingerprint: true
             }
         }
     }
