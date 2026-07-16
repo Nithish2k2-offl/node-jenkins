@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Code Checkout') {
             steps {
-                echo 'Successfully pulled code from GitHub repository!'
+                echo "Running pipeline job: ${env.JOB_NAME}"
+                echo "Executing build sequence number: ${env.BUILD_NUMBER}"
             }
         }
 
