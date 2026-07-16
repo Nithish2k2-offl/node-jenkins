@@ -23,5 +23,20 @@ pipeline {
                 }
             }
         }
+        stage('Package App Artifacts') {
+            steps {
+                echo 'Archiving code files into a deployable bundle...'
+                // This native Jenkins step safely records your specified application files
+                archiveArtifacts artifacts: 'index.html,server.js', fingerprint: true
+            }
+        }
+    }
+        post {
+        success {
+            echo 'Build successful! Artifacts securely archived.'
+        }
+        failure {
+            echo 'Pipeline broke. Check recent commits.'
+        }
     }
 }
